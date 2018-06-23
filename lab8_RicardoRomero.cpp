@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Persona.h"
 #include <vector>
+#include "time.h"
+#include "stdlib.h"
 
 using namespace std;
 
@@ -77,13 +79,39 @@ int main() {
 
                 cout<<"Seleccione la primera persona: "<<endl;
                 cin>>p1;
-                cout<<"Seleccone la segunda persona: "<<endl;
+                cout<<"Seleccione la segunda persona: "<<endl;
                 cin>>p2;                
-
-                if(person[p1] -> getGenero() == person[p2] -> getGenero()) {
-                    cout<<"No se puede el coito entre los mismos sexos"<<endl;
+                if(person[p1]->getFertil() == true && person[p2]->getFertil() == true){
+                    if(person[p1] -> getGenero() == person[p2] -> getGenero()) {
+                        cout<<"No se puede el coito entre los mismos sexos"<<endl;
+                    }else{
+                        int random = 0;
+                        srand(time(NULL));
+                        random = (rand()&100) + 1;
+                        if(random == 1) {
+                            cout<<"Se le salio el chele del condon"<<endl;
+                            int random2 = 0;
+                            srand(time(NULL));
+                            random2 = (rand()&28) + 1;
+                            if(random2 > 1 && random2 <= 6) {
+                                cout<<"Cagada esta Embarazada"<<endl;
+                                int random3 = 0;
+                                srand(time(NULL));
+                                random3 = (rand()&2) + 1;
+                                if(random3 == 1) {
+                                    cout<<"Es Hombre"<<endl;
+                                }else{
+                                    cout<<"Es Mujer"<<endl;
+                                }
+                            }else{
+                                cout<<"Sigan Disfrutando del sexo seguro"<<endl;
+                            }
+                        }else{
+                            cout<<"CELEBREN,TODO ESTA BIEN!"<<endl;
+                        }
+                    }    
                 }else{
-
+                    cout<<"Lo sentimos no pueden tener hijos"<<endl;
                 }
                 break;
 			case 5:

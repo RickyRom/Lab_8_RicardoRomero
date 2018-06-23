@@ -1,4 +1,6 @@
 #include "Persona.h"
+#include <iostream>
+#include <fstream>
 
 using namespace std;
 
@@ -72,4 +74,12 @@ void Persona::setFertil(bool fert) {
 
 ostream& operator<<(ostream& out, Persona& per) {
     
+}
+
+double Persona::operator*(Persona& rValue) {
+    
+}
+
+double Persona::operator+(Persona& rValue) {
+    return 12;
 }
